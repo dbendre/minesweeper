@@ -1,0 +1,17 @@
+mine_sweeper.out: main.o board.o play.o board_print.o
+	gcc -Wall -o mine_sweeper.out main.o board.o play.o board_print.o
+
+main.o: main.c mines.h
+	gcc -Wall -g -c -o main.o main.c
+
+board.o: board.c board.h
+	gcc -Wall -g -c -o board.o board.c
+
+play.o: play.c play.h
+	gcc -Wall -g -c -o play.o play.c
+
+board_print.o: board_print.c board_print.h
+	gcc -Wall -g -c -o board_print.o board_print.c
+
+clean:
+	rm *.o *.out
